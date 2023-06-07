@@ -1,0 +1,32 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <h3 class="mb-5">Product Tracker</h3>
+    <div class="mb-4">
+        <form>
+            Name : <input type="text" name="name" [(ngModel)]="name">
+            <button type="submit" class="btn btn-outline-success" (click)="searchProduct()">Search</button>
+        </form>
+    </div>
+    <table class="mt-4 table-striped" border="1">
+        <tr class="table-warning">
+            <th class="text-center"><button (click)="onName()" style="border: none;background: none;"><th>Name</th></button></th>
+            <th class="text-center"><button (click)="onDescription()" style="border: none;background: none;"><th>Description</th></button></th>
+            <th class="text-center"><button (click)="onUnitPrice()" style="border: none;background: none;"><th>UnitPrice</th></button></th>
+            <th class="text-center"><button (click)="onQuantity()" style="border: none;background: none;"><th>Quantity</th></button></th>
+            <th class="text-center"><button (click)="onThresholdQuantity()" style="border: none;background: none;"><th>ThresholdQuantity</th></button></th>
+        </tr>
+        <tr *ngFor="let p of products" class="table-warning">
+            <td class="text-center">{{p.name}}</td>
+            <td class="text-center">{{p.description}}</td>
+            <td class="text-center">{{p.unitPrice}}</td>
+            <td class="text-center">{{p.quantity}}</td>
+            <td class="text-center">{{p.thresholdQuantity}}</td>
+            </tr>
+    </table>
+    <div class="pagination mt-4">
+        <button class="btn btn-primary" (click)="previousPage()" [disabled]="isDisabled">Previous</button>
+        <h5>{{pageNo+1}}</h5>
+        <button class="btn btn-primary" (click)="nextPage()" [disabled]="isDisabled2">Next</button>
+    </div>
+</div>
+    
+

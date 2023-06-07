@@ -10,7 +10,8 @@ import { InventoryComponent } from './home/inventory/inventory.component';
 import { FormsModule } from '@angular/forms';
 import { SupplierComponent } from './home/supplier/supplier.component';
 import { AddSupplierComponent } from './home/add-supplier/add-supplier.component';
-import { OAuthModule } from 'angular-oauth2-oidc';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddProductComponent } from './home/add-product/add-product.component'; 
 
 @NgModule({
   declarations: [
@@ -20,14 +21,16 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     ProductsComponent,
     InventoryComponent,
     SupplierComponent,
-    AddSupplierComponent
+    AddSupplierComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    OAuthModule
+    BrowserAnimationsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
