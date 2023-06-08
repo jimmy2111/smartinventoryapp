@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+      "strict-origin-proxy": {
+        "matchCondition": {
+          "route": "/.*"
+        },
+        "responseOverrides": {
+          "response.headers.Strict-Transport-Security": "strict-origin-when-cross-origin"
+        }
+      }
+    }
+  }
+  
